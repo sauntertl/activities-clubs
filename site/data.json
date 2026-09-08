@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T08:14:05.609558+00:00",
+  "generated_at": "2026-09-08T08:14:30.522578+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T08:14:05.609308+00:00"
+      "last_success": "2026-09-08T08:14:30.522318+00:00"
     }
   ],
   "activities": [
@@ -267,6 +267,18 @@
       "title": "docs: show weekly club activity refresh schedule",
       "url": "https://github.com/sauntertl/activities-clubs/commit/89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
       "date": "2026-09-08T08:13:51Z",
+      "test": true
+    },
+    {
+      "id": "commit:1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: allow eight days before weekly refresh delay notice",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "date": "2026-09-08T08:14:15Z",
       "test": true
     }
   ],

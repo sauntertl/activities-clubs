@@ -249,6 +249,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
       "date": "2026-09-08T08:13:51Z",
       "test": true
+    },
+    "1:commit:1049a8931d439047f2c283cc60dec8a4c40a29bf": {
+      "id": "commit:1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: allow eight days before weekly refresh delay notice",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "date": "2026-09-08T08:14:15Z",
+      "test": true
     }
   }
 }
