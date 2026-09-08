@@ -5,6 +5,7 @@
 - 등록 이슈: 제출자가 본인 ID로 작성했는지, 동아리와 활동 기간이 맞는지, 저장소가 공개 가능한 본인 활동 대상인지 확인합니다.
 - 성과 이슈: 등록 번호, 본인 역할, 증빙 원문을 확인합니다. 이후 `approved` 라벨을 붙입니다.
 - 라벨 적용 시점의 제목·본문·제출자 ID 해시를 저장합니다. 내용을 수정하면 기존 승인은 유효하지 않습니다. 확인 후 라벨을 제거하고 다시 붙여 재승인합니다.
+- 성과 승인에는 연결 등록의 해시도 저장합니다. 동아리명·기간·저장소 등 등록 내용을 수정하면 등록을 먼저 재승인하고, 연결된 성과도 검토 후 각각 재승인합니다. 이전 형식의 성과 승인도 최초 1회 재승인이 필요합니다. 자동 수집 캐시는 변경된 등록 기준으로 다시 수집합니다.
 - 이슈를 닫으면 다음 수집에서 게시 대상에서 제외합니다. GitHub의 이슈와 Git 이력 자체가 삭제되는 것은 아닙니다. 수집 해제 후 이슈를 다시 열 경우 재승인합니다.
 - 학번·연락처·비공개 기업 자료를 이 공개 저장소에 제출하지 않도록 안내합니다. 학생 신원 대조 명부가 필요하면 사업단 내부에서 별도로 관리합니다.
 
@@ -14,6 +15,9 @@
 - `Collect and publish clubs` 작업은 매주 월요일 한국 시간 오전 7시 17분에 예약 실행됩니다. GitHub 상태에 따라 시작이 지연되거나 실행이 누락될 수 있습니다.
 - 수동 갱신은 Actions → Collect and publish clubs → Run workflow로 실행합니다.
 - `approved` 라벨은 첫 수집 작업이 생성합니다. 라벨·본문·열림 상태 변경도 갱신을 실행합니다.
+- 실행은 `concurrency.queue: max`로 직렬 처리합니다. GitHub의 대기 한도는 100건이며, 한도 초과·실행 실패·수동 취소까지 자동 복구하는 방식은 아닙니다. 이벤트 시각이 오래된 실행이 최신 승인 기록을 덮어쓰지 않도록 검사하지만, 동일 초에 발생한 이벤트의 순서는 구분하지 못합니다.
+- 승인 반영이 누락되면 실패 원인을 확인한 뒤 해당 이슈의 `approved` 라벨을 제거하고 다시 붙입니다. 단순 정기 실행이나 Run workflow는 누락된 승인을 새로 만들지 않습니다. 이슈 타임라인 기반 승인 복구는 향후 보완 사항입니다.
+- 수집 작업에는 저장소·이슈 쓰기 권한, 배포 작업에는 Pages·OIDC 쓰기 권한을 별도로 부여합니다. 사용하는 Actions는 커밋 SHA로 고정하며 업데이트 시 검증 후 교체합니다.
 - `site/data.json`은 페이지 게시용 결과이고 `data/state.json`은 승인 해시와 누적 수집 기록입니다.
 - 기본 저장소 정보는 `GITHUB_REPOSITORY`에서 가져옵니다. 별도 학생 토큰이나 비밀번호를 받지 않습니다. 지정한 외부 공개 저장소만 조회합니다.
 - 이슈 목록 조회 실패는 전체 작업을 실패시키고 이전 페이지를 유지합니다. 등록별 오류는 해당 등록의 수집 상태와 확인 사항에 표시합니다. 8일 넘게 갱신되지 않으면 페이지에 지연 안내가 표시됩니다.
@@ -44,5 +48,6 @@
 ## 참고
 
 - [GitHub Pages 워크플로](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+- [Actions 동시 실행과 대기열](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
 - [기여 기록 집계 기준](https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference)
 - [이슈 양식](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms)
