@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:52:44.712637+00:00",
+  "generated_at": "2026-09-08T09:53:09.441133+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:52:44.712367+00:00"
+      "last_success": "2026-09-08T09:53:09.440833+00:00"
     }
   ],
   "activities": [
@@ -399,6 +399,18 @@
       "title": "docs: include frontend test command",
       "url": "https://github.com/sauntertl/activities-clubs/commit/a6cd93dc7a3653d4366f381eb908debca35f74d1",
       "date": "2026-09-08T09:52:27Z",
+      "test": true
+    },
+    {
+      "id": "commit:8cfa210a5f618031590731eff47c3a61c05e0d1d",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: retain queued events and isolate Pages deployment permissions",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/8cfa210a5f618031590731eff47c3a61c05e0d1d",
+      "date": "2026-09-08T09:52:47Z",
       "test": true
     }
   ],
