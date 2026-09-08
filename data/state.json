@@ -3,6 +3,10 @@
     "1": {
       "digest": "d7d858de623797b0ff9d66cfc3d5e75be4e5f5641bba7b429765630a0b551a2e",
       "by": "sauntertl"
+    },
+    "2": {
+      "digest": "3948d40e37f734e26909b425f8c3ddf8c6cda973d9eeb0036175d3ee97121bf7",
+      "by": "sauntertl"
     }
   },
   "activities": {
@@ -196,6 +200,18 @@
       "title": "[등록] 운영자 테스트 / sauntertl",
       "url": "https://github.com/sauntertl/activities-clubs/issues/1",
       "date": "2026-09-08T07:42:00Z",
+      "test": true
+    },
+    "1:issue:https://github.com/sauntertl/activities-clubs/issues/2": {
+      "id": "issue:https://github.com/sauntertl/activities-clubs/issues/2",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "issue",
+      "title": "[성과] 운영자 테스트 — 동아리 활동 수집·제출 환경 구성",
+      "url": "https://github.com/sauntertl/activities-clubs/issues/2",
+      "date": "2026-09-08T07:43:49Z",
       "test": true
     }
   }
