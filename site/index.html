@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="동아리의 공개 GitHub 활동과 확인된 성과를 모아보는 공간">
-  <title>SW 동아리 활동</title><link rel="stylesheet" href="styles.css">
+  <title>SW 동아리 활동</title><link rel="stylesheet" href="styles.css"><link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -15,7 +15,8 @@
     <div id="test-note" class="test-note" hidden>현재 운영자 계정으로 기능을 시험하고 있습니다. ‘운영자 테스트’ 기록은 학생 참여 실적에 포함하지 않습니다.</div>
     <section class="metrics" aria-label="활동 요약"><div><span>등록 계정</span><strong id="m-people">—</strong><small id="student-count">학생 등록 대기</small></div><div><span>프로젝트 저장소</span><strong id="m-repos">—</strong><small>승인된 활동 대상</small></div><div><span>자동 수집 기록</span><strong id="m-auto">—</strong><small>실적 심사 전 GitHub 기록</small></div><div><span>확인된 제출 성과</span><strong id="m-manual">—</strong><small>담당자가 내용을 확인한 제출 건</small></div></section>
     <section class="workspace" aria-labelledby="records-title"><div class="section-heading"><div><p class="eyebrow">ACTIVITY EXPLORER</p><h2 id="records-title">동아리의 활동을 살펴보세요</h2></div><a id="review" class="text-link" href="https://github.com/sauntertl/activities-clubs/issues">등록·제출 확인 ↗</a></div>
-      <form id="filters" class="filters"><label>동아리<select id="club"><option value="">전체 동아리</option></select></label><label>계정·내용 검색<input id="search" type="search" placeholder="GitHub ID, 활동명"></label><label>시작일<input id="from" type="date"></label><label>종료일<input id="to" type="date"></label><label class="check"><input id="tests" type="checkbox" checked>운영자 테스트 포함</label><button id="reset" type="reset">초기화</button></form>
+      <form id="filters" class="filters"><label>동아리<select id="club"><option value="">전체 동아리</option></select></label><label>계정·내용 검색<input id="search" type="search" placeholder="GitHub ID, 활동명"></label><label>시작일<input id="from" type="date" aria-describedby="date-error"></label><label>종료일<input id="to" type="date" aria-describedby="date-error"></label><label class="check"><input id="tests" type="checkbox" checked>운영자 테스트 포함</label><button id="reset" type="reset">초기화</button></form>
+      <p id="date-error" class="date-error" role="alert" hidden></p>
       <div class="tabs" role="tablist" aria-label="기록 구분"><button id="tab-auto" role="tab" aria-selected="true" aria-controls="panel" data-tab="auto">자동 수집 기록</button><button id="tab-manual" role="tab" aria-selected="false" aria-controls="panel" data-tab="manual" tabindex="-1">제출 성과</button><button id="tab-people" role="tab" aria-selected="false" aria-controls="panel" data-tab="people" tabindex="-1">참여 등록</button></div>
       <div class="panel-head"><p id="explanation">승인된 공개 저장소의 기본 브랜치 커밋, PR, 이슈, 리뷰를 표시합니다.</p><span id="count" aria-live="polite">—</span></div>
       <div id="panel" role="tabpanel" aria-labelledby="tab-auto" tabindex="0"><div class="empty">수집 결과를 기다리고 있습니다.</div></div>
