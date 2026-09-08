@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:50:00.221321+00:00",
+  "generated_at": "2026-09-08T09:50:21.656310+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:50:00.221049+00:00"
+      "last_success": "2026-09-08T09:50:21.655975+00:00"
     }
   ],
   "activities": [
@@ -327,6 +327,18 @@
       "title": "fix: improve text contrast and remove blocking font import",
       "url": "https://github.com/sauntertl/activities-clubs/commit/4f18be46af390d8b0edf999251199f4cad8ef226",
       "date": "2026-09-08T09:49:44Z",
+      "test": true
+    },
+    {
+      "id": "commit:c323332ecf2211ca2a72efa115f5aa3c0603378d",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: add local SW favicon",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/c323332ecf2211ca2a72efa115f5aa3c0603378d",
+      "date": "2026-09-08T09:50:07Z",
       "test": true
     }
   ],

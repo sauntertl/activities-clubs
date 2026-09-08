@@ -309,6 +309,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/4f18be46af390d8b0edf999251199f4cad8ef226",
       "date": "2026-09-08T09:49:44Z",
       "test": true
+    },
+    "1:commit:c323332ecf2211ca2a72efa115f5aa3c0603378d": {
+      "id": "commit:c323332ecf2211ca2a72efa115f5aa3c0603378d",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: add local SW favicon",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/c323332ecf2211ca2a72efa115f5aa3c0603378d",
+      "date": "2026-09-08T09:50:07Z",
+      "test": true
     }
   },
   "activity_scopes": {
