@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:51:34.542145+00:00",
+  "generated_at": "2026-09-08T09:52:21.370144+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:51:34.541892+00:00"
+      "last_success": "2026-09-08T09:52:21.369798+00:00"
     }
   ],
   "activities": [
@@ -375,6 +375,18 @@
       "title": "test: cover filters keyboard navigation safe links and load errors",
       "url": "https://github.com/sauntertl/activities-clubs/commit/744f9dae3d68892bc0c6b3c624162e2feeee135c",
       "date": "2026-09-08T09:51:20Z",
+      "test": true
+    },
+    {
+      "id": "commit:47966d4aa33b982694771a6c1efd65afd2b04b05",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "docs: explain revision approvals queue limits and recovery",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/47966d4aa33b982694771a6c1efd65afd2b04b05",
+      "date": "2026-09-08T09:52:06Z",
       "test": true
     }
   ],

@@ -357,6 +357,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/744f9dae3d68892bc0c6b3c624162e2feeee135c",
       "date": "2026-09-08T09:51:20Z",
       "test": true
+    },
+    "1:commit:47966d4aa33b982694771a6c1efd65afd2b04b05": {
+      "id": "commit:47966d4aa33b982694771a6c1efd65afd2b04b05",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "docs: explain revision approvals queue limits and recovery",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/47966d4aa33b982694771a6c1efd65afd2b04b05",
+      "date": "2026-09-08T09:52:06Z",
+      "test": true
     }
   },
   "activity_scopes": {
