@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T07:44:40.204276+00:00",
+  "generated_at": "2026-09-08T07:48:26.786613+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T07:44:40.203953+00:00"
+      "last_success": "2026-09-08T07:48:26.786353+00:00"
     }
   ],
   "activities": [
@@ -231,6 +231,18 @@
       "title": "[성과] 운영자 테스트 — 동아리 활동 수집·제출 환경 구성",
       "url": "https://github.com/sauntertl/activities-clubs/issues/2",
       "date": "2026-09-08T07:43:49Z",
+      "test": true
+    },
+    {
+      "id": "commit:2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: collect against latest main after queued runs",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
+      "date": "2026-09-08T07:48:12Z",
       "test": true
     }
   ],
