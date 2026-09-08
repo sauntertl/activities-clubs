@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:49:13.456832+00:00",
+  "generated_at": "2026-09-08T09:49:37.960889+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:49:13.456466+00:00"
+      "last_success": "2026-09-08T09:49:37.960613+00:00"
     }
   ],
   "activities": [
@@ -303,6 +303,18 @@
       "title": "[등록] 운영자 테스트 / sauntertl",
       "url": "https://github.com/sauntertl/activities-clubs/issues/1",
       "date": "2026-09-08T07:42:00Z",
+      "test": true
+    },
+    {
+      "id": "commit:ce5a8da8ef65b2a033f01f8f2caefac161d3e312",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "test: cover approval order registration changes and API failures",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/ce5a8da8ef65b2a033f01f8f2caefac161d3e312",
+      "date": "2026-09-08T09:49:26Z",
       "test": true
     }
   ],

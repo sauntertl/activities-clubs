@@ -285,6 +285,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/issues/1",
       "date": "2026-09-08T07:42:00Z",
       "test": true
+    },
+    "1:commit:ce5a8da8ef65b2a033f01f8f2caefac161d3e312": {
+      "id": "commit:ce5a8da8ef65b2a033f01f8f2caefac161d3e312",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "test: cover approval order registration changes and API failures",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/ce5a8da8ef65b2a033f01f8f2caefac161d3e312",
+      "date": "2026-09-08T09:49:26Z",
+      "test": true
     }
   },
   "activity_scopes": {
