@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T08:14:54.690383+00:00",
+  "generated_at": "2026-09-08T09:49:13.456832+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,10 +25,82 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T08:14:54.690126+00:00"
+      "last_success": "2026-09-08T09:49:13.456466+00:00"
     }
   ],
   "activities": [
+    {
+      "id": "commit:5874b0936239e2c7f41ee3a26f16a4ed720645df",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: bind performance approvals to registration revisions",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/5874b0936239e2c7f41ee3a26f16a4ed720645df",
+      "date": "2026-09-08T09:48:58Z",
+      "test": true
+    },
+    {
+      "id": "commit:c6f91a70cf1582bcd9964671d97befd839fb8668",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "docs: document weekly collection and eight day delay threshold",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/c6f91a70cf1582bcd9964671d97befd839fb8668",
+      "date": "2026-09-08T08:14:39Z",
+      "test": true
+    },
+    {
+      "id": "commit:1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: allow eight days before weekly refresh delay notice",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/1049a8931d439047f2c283cc60dec8a4c40a29bf",
+      "date": "2026-09-08T08:14:15Z",
+      "test": true
+    },
+    {
+      "id": "commit:89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "docs: show weekly club activity refresh schedule",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
+      "date": "2026-09-08T08:13:51Z",
+      "test": true
+    },
+    {
+      "id": "commit:33ee98db9e414be0aced64536fa076f2ac67bd9f",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "chore: collect club activities weekly on Monday KST",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/33ee98db9e414be0aced64536fa076f2ac67bd9f",
+      "date": "2026-09-08T08:13:24Z",
+      "test": true
+    },
+    {
+      "id": "commit:2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: collect against latest main after queued runs",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
+      "date": "2026-09-08T07:48:12Z",
+      "test": true
+    },
     {
       "id": "commit:b7df223d9a40d0ae63cd036f7a0cfca403c790b0",
       "registration": 1,
@@ -210,18 +282,6 @@
       "test": true
     },
     {
-      "id": "issue:https://github.com/sauntertl/activities-clubs/issues/1",
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "repository": "sauntertl/activities-clubs",
-      "type": "issue",
-      "title": "[등록] 운영자 테스트 / sauntertl",
-      "url": "https://github.com/sauntertl/activities-clubs/issues/1",
-      "date": "2026-09-08T07:42:00Z",
-      "test": true
-    },
-    {
       "id": "issue:https://github.com/sauntertl/activities-clubs/issues/2",
       "registration": 1,
       "login": "sauntertl",
@@ -234,84 +294,21 @@
       "test": true
     },
     {
-      "id": "commit:2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
+      "id": "issue:https://github.com/sauntertl/activities-clubs/issues/1",
       "registration": 1,
       "login": "sauntertl",
       "club": "운영자 테스트",
       "repository": "sauntertl/activities-clubs",
-      "type": "commit",
-      "title": "fix: collect against latest main after queued runs",
-      "url": "https://github.com/sauntertl/activities-clubs/commit/2db1789d84850afee2d9c5e03fa1c5401b9b5f08",
-      "date": "2026-09-08T07:48:12Z",
-      "test": true
-    },
-    {
-      "id": "commit:33ee98db9e414be0aced64536fa076f2ac67bd9f",
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "repository": "sauntertl/activities-clubs",
-      "type": "commit",
-      "title": "chore: collect club activities weekly on Monday KST",
-      "url": "https://github.com/sauntertl/activities-clubs/commit/33ee98db9e414be0aced64536fa076f2ac67bd9f",
-      "date": "2026-09-08T08:13:24Z",
-      "test": true
-    },
-    {
-      "id": "commit:89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "repository": "sauntertl/activities-clubs",
-      "type": "commit",
-      "title": "docs: show weekly club activity refresh schedule",
-      "url": "https://github.com/sauntertl/activities-clubs/commit/89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
-      "date": "2026-09-08T08:13:51Z",
-      "test": true
-    },
-    {
-      "id": "commit:1049a8931d439047f2c283cc60dec8a4c40a29bf",
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "repository": "sauntertl/activities-clubs",
-      "type": "commit",
-      "title": "fix: allow eight days before weekly refresh delay notice",
-      "url": "https://github.com/sauntertl/activities-clubs/commit/1049a8931d439047f2c283cc60dec8a4c40a29bf",
-      "date": "2026-09-08T08:14:15Z",
-      "test": true
-    },
-    {
-      "id": "commit:c6f91a70cf1582bcd9964671d97befd839fb8668",
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "repository": "sauntertl/activities-clubs",
-      "type": "commit",
-      "title": "docs: document weekly collection and eight day delay threshold",
-      "url": "https://github.com/sauntertl/activities-clubs/commit/c6f91a70cf1582bcd9964671d97befd839fb8668",
-      "date": "2026-09-08T08:14:39Z",
+      "type": "issue",
+      "title": "[등록] 운영자 테스트 / sauntertl",
+      "url": "https://github.com/sauntertl/activities-clubs/issues/1",
+      "date": "2026-09-08T07:42:00Z",
       "test": true
     }
   ],
-  "submissions": [
-    {
-      "id": 2,
-      "registration": 1,
-      "login": "sauntertl",
-      "club": "운영자 테스트",
-      "title": "[성과] 운영자 테스트 — 동아리 활동 수집·제출 환경 구성",
-      "date": "2026-09-08",
-      "summary": "운영자 계정 sauntertl에서 동아리 활동 등록·성과 제출 양식, 자동 수집 코드, 통합 조회 페이지를 구성하고 시험 등록을 진행했습니다.\n\n본 제출은 운영자 기능 검증용이며 실제 학생 동아리 실적이 아닙니다. 등록과 수동 성과가 별도로 연결되고 담당자 승인 후 표시되는지 확인하기 위한 시험 자료입니다.",
-      "links": [
-        "https://github.com/sauntertl/activities-clubs",
-        "https://github.com/sauntertl/activities-clubs/actions/runs/34200557529"
-      ],
-      "url": "https://github.com/sauntertl/activities-clubs/issues/2",
-      "test": true,
-      "status": "담당자 확인"
-    }
+  "submissions": [],
+  "notices": [
+    "성과 #2: 연결 등록 정보 변경 또는 이전 승인 형식: 성과 라벨을 제거한 뒤 재승인해 주세요"
   ],
-  "notices": [],
-  "pending": 0
+  "pending": 1
 }
