@@ -3,6 +3,12 @@
     "1": {
       "digest": "d7d858de623797b0ff9d66cfc3d5e75be4e5f5641bba7b429765630a0b551a2e",
       "by": "sauntertl"
+    },
+    "2": {
+      "digest": "3948d40e37f734e26909b425f8c3ddf8c6cda973d9eeb0036175d3ee97121bf7",
+      "by": "sauntertl",
+      "approved_at": "2026-09-08T09:54:51Z",
+      "registration_digest": "d7d858de623797b0ff9d66cfc3d5e75be4e5f5641bba7b429765630a0b551a2e"
     }
   },
   "activities": {
@@ -395,6 +401,6 @@
     "1": "d7d858de623797b0ff9d66cfc3d5e75be4e5f5641bba7b429765630a0b551a2e"
   },
   "approval_events": {
-    "2": "2026-09-08T09:54:02Z"
+    "2": "2026-09-08T09:54:51Z"
   }
 }
