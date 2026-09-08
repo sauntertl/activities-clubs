@@ -27,7 +27,7 @@ fetch('data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.st
   $('title').textContent=data.config.title;document.title=data.config.title;$('subtitle').textContent=data.config.subtitle;
   if(/^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/.test(data.repository)){const base='https://github.com/'+data.repository;$('repository').href=base;$('profile').href='https://github.com/'+data.repository.split('/')[0];$('register').href=base+'/issues/new?template=01-register.yml';$('submit').href=base+'/issues/new?template=02-activity.yml';$('review').href=base+'/issues';$('operations').href=base+'/blob/main/docs/OPERATIONS.md';}
   $('status').textContent=data.generated_at?'마지막 갱신 '+new Date(data.generated_at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})+' · 등록·제출 확인 대기 '+data.pending+'건':'첫 자동 수집을 준비하고 있습니다.';
-  if(data.generated_at&&Date.now()-new Date(data.generated_at)>36*3600000){$('status').textContent+=' · 갱신이 지연되고 있습니다.';$('status').classList.add('error');}
+  if(data.generated_at&&Date.now()-new Date(data.generated_at)>8*24*3600000){$('status').textContent+=' · 갱신이 지연되고 있습니다.';$('status').classList.add('error');}
   $('test-note').hidden=!data.registrations.some(r=>r.test);
   for(const club of [...new Set(data.registrations.map(r=>r.club))].sort()){$('club').append(new Option(club,club));}
   for(const notice of data.notices||[])$('notices').append(element('li',notice));if(data.notices?.length){$('collection-notices').open=true;$('status').textContent+=' · 수집 확인 사항 '+data.notices.length+'건';}
