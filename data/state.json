@@ -1,4 +1,202 @@
 {
-  "approvals": {},
-  "activities": {}
+  "approvals": {
+    "1": {
+      "digest": "d7d858de623797b0ff9d66cfc3d5e75be4e5f5641bba7b429765630a0b551a2e",
+      "by": "sauntertl"
+    }
+  },
+  "activities": {
+    "1:commit:b7df223d9a40d0ae63cd036f7a0cfca403c790b0": {
+      "id": "commit:b7df223d9a40d0ae63cd036f7a0cfca403c790b0",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add .github/workflows/update.yml",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/b7df223d9a40d0ae63cd036f7a0cfca403c790b0",
+      "date": "2026-09-08T07:40:53Z",
+      "test": true
+    },
+    "1:commit:4721740520c1a22e260c3e57927feb4306a7bceb": {
+      "id": "commit:4721740520c1a22e260c3e57927feb4306a7bceb",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add docs/OPERATIONS.md",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/4721740520c1a22e260c3e57927feb4306a7bceb",
+      "date": "2026-09-08T07:39:54Z",
+      "test": true
+    },
+    "1:commit:8f5b3878b5e08cc444f672270731a143c8c64975": {
+      "id": "commit:8f5b3878b5e08cc444f672270731a143c8c64975",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add data/state.json",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/8f5b3878b5e08cc444f672270731a143c8c64975",
+      "date": "2026-09-08T07:39:35Z",
+      "test": true
+    },
+    "1:commit:516eade99aaeeb1e9623fec3edc28e34535b0b78": {
+      "id": "commit:516eade99aaeeb1e9623fec3edc28e34535b0b78",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add site/data.json",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/516eade99aaeeb1e9623fec3edc28e34535b0b78",
+      "date": "2026-09-08T07:39:25Z",
+      "test": true
+    },
+    "1:commit:a1ae41ea78325681139f6303da6de147d6e040f6": {
+      "id": "commit:a1ae41ea78325681139f6303da6de147d6e040f6",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add site/app.js",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/a1ae41ea78325681139f6303da6de147d6e040f6",
+      "date": "2026-09-08T07:38:50Z",
+      "test": true
+    },
+    "1:commit:995dca99e15282ca7e6ee79e72590bdda6d52c0d": {
+      "id": "commit:995dca99e15282ca7e6ee79e72590bdda6d52c0d",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add site/styles.css",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/995dca99e15282ca7e6ee79e72590bdda6d52c0d",
+      "date": "2026-09-08T07:38:31Z",
+      "test": true
+    },
+    "1:commit:2ac94b47614cb6e025ba2996b4c627144bd8c740": {
+      "id": "commit:2ac94b47614cb6e025ba2996b4c627144bd8c740",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add site/index.html",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/2ac94b47614cb6e025ba2996b4c627144bd8c740",
+      "date": "2026-09-08T07:38:22Z",
+      "test": true
+    },
+    "1:commit:4dd70cbcdea94aaf8c904f18c30dc75dd4b1f8ad": {
+      "id": "commit:4dd70cbcdea94aaf8c904f18c30dc75dd4b1f8ad",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add tests/test_collect.py",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/4dd70cbcdea94aaf8c904f18c30dc75dd4b1f8ad",
+      "date": "2026-09-08T07:37:54Z",
+      "test": true
+    },
+    "1:commit:f642f611f20a4ba71ae99ec32a54226d15083a17": {
+      "id": "commit:f642f611f20a4ba71ae99ec32a54226d15083a17",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add scripts/collect.py",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/f642f611f20a4ba71ae99ec32a54226d15083a17",
+      "date": "2026-09-08T07:37:44Z",
+      "test": true
+    },
+    "1:commit:bf4437e6a180ab4b36c51b2e98e4fb0bb8af74f5": {
+      "id": "commit:bf4437e6a180ab4b36c51b2e98e4fb0bb8af74f5",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add .github/ISSUE_TEMPLATE/config.yml",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/bf4437e6a180ab4b36c51b2e98e4fb0bb8af74f5",
+      "date": "2026-09-08T07:37:24Z",
+      "test": true
+    },
+    "1:commit:a06eecbe410d333981a1649bc2892141a1a45130": {
+      "id": "commit:a06eecbe410d333981a1649bc2892141a1a45130",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add .github/ISSUE_TEMPLATE/02-activity.yml",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/a06eecbe410d333981a1649bc2892141a1a45130",
+      "date": "2026-09-08T07:37:14Z",
+      "test": true
+    },
+    "1:commit:b42d2b9decbcd3fa7cd601011285ed1d18621813": {
+      "id": "commit:b42d2b9decbcd3fa7cd601011285ed1d18621813",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add .github/ISSUE_TEMPLATE/01-register.yml",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/b42d2b9decbcd3fa7cd601011285ed1d18621813",
+      "date": "2026-09-08T07:36:57Z",
+      "test": true
+    },
+    "1:commit:ca07c9572e3cff3a3927a8deda3752c4362b74b2": {
+      "id": "commit:ca07c9572e3cff3a3927a8deda3752c4362b74b2",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add .gitignore",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/ca07c9572e3cff3a3927a8deda3752c4362b74b2",
+      "date": "2026-09-08T07:36:47Z",
+      "test": true
+    },
+    "1:commit:d11d312c59afe1eba786370c92a4702e4765d198": {
+      "id": "commit:d11d312c59afe1eba786370c92a4702e4765d198",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add config.json",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/d11d312c59afe1eba786370c92a4702e4765d198",
+      "date": "2026-09-08T07:36:38Z",
+      "test": true
+    },
+    "1:commit:fdf22a9dad2465055d01db01188411d995835451": {
+      "id": "commit:fdf22a9dad2465055d01db01188411d995835451",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "feat: add README.md",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/fdf22a9dad2465055d01db01188411d995835451",
+      "date": "2026-09-08T07:36:09Z",
+      "test": true
+    },
+    "1:issue:https://github.com/sauntertl/activities-clubs/issues/1": {
+      "id": "issue:https://github.com/sauntertl/activities-clubs/issues/1",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "issue",
+      "title": "[등록] 운영자 테스트 / sauntertl",
+      "url": "https://github.com/sauntertl/activities-clubs/issues/1",
+      "date": "2026-09-08T07:42:00Z",
+      "test": true
+    }
+  }
 }
