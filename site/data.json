@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:53:09.441133+00:00",
+  "generated_at": "2026-09-08T09:54:13.951529+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:53:09.440833+00:00"
+      "last_success": "2026-09-08T09:54:13.951510+00:00"
     }
   ],
   "activities": [
@@ -415,8 +415,6 @@
     }
   ],
   "submissions": [],
-  "notices": [
-    "성과 #2: 연결 등록 정보 변경 또는 이전 승인 형식: 성과 라벨을 제거한 뒤 재승인해 주세요"
-  ],
+  "notices": [],
   "pending": 1
 }
