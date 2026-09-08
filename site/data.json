@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:51:04.900121+00:00",
+  "generated_at": "2026-09-08T09:51:34.542145+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:51:04.899814+00:00"
+      "last_success": "2026-09-08T09:51:34.541892+00:00"
     }
   ],
   "activities": [
@@ -363,6 +363,18 @@
       "title": "fix: explain reversed date ranges and restore valid filters",
       "url": "https://github.com/sauntertl/activities-clubs/commit/1f8d8875df4a47929f4b09ac4fb0cd36bb3b6535",
       "date": "2026-09-08T09:50:53Z",
+      "test": true
+    },
+    {
+      "id": "commit:744f9dae3d68892bc0c6b3c624162e2feeee135c",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "test: cover filters keyboard navigation safe links and load errors",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/744f9dae3d68892bc0c6b3c624162e2feeee135c",
+      "date": "2026-09-08T09:51:20Z",
       "test": true
     }
   ],

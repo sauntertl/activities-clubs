@@ -345,6 +345,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/1f8d8875df4a47929f4b09ac4fb0cd36bb3b6535",
       "date": "2026-09-08T09:50:53Z",
       "test": true
+    },
+    "1:commit:744f9dae3d68892bc0c6b3c624162e2feeee135c": {
+      "id": "commit:744f9dae3d68892bc0c6b3c624162e2feeee135c",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "test: cover filters keyboard navigation safe links and load errors",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/744f9dae3d68892bc0c6b3c624162e2feeee135c",
+      "date": "2026-09-08T09:51:20Z",
+      "test": true
     }
   },
   "activity_scopes": {
