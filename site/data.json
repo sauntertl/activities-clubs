@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:50:44.185900+00:00",
+  "generated_at": "2026-09-08T09:51:04.900121+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:50:44.185558+00:00"
+      "last_success": "2026-09-08T09:51:04.899814+00:00"
     }
   ],
   "activities": [
@@ -351,6 +351,18 @@
       "title": "fix: connect favicon and accessible date validation message",
       "url": "https://github.com/sauntertl/activities-clubs/commit/ab10c4a377fd249fdee20848add0623f78253435",
       "date": "2026-09-08T09:50:31Z",
+      "test": true
+    },
+    {
+      "id": "commit:1f8d8875df4a47929f4b09ac4fb0cd36bb3b6535",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: explain reversed date ranges and restore valid filters",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/1f8d8875df4a47929f4b09ac4fb0cd36bb3b6535",
+      "date": "2026-09-08T09:50:53Z",
       "test": true
     }
   ],
