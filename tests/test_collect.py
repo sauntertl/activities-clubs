@@ -2,6 +2,8 @@ import copy
 import importlib.util
 from pathlib import Path
 import unittest
+from unittest.mock import patch
+from urllib.error import URLError
 
 spec = importlib.util.spec_from_file_location('collector', Path(__file__).resolve().parents[1] / 'scripts/collect.py')
 c = importlib.util.module_from_spec(spec)
@@ -15,6 +17,108 @@ def sample_issue(number=1, title='[등록] 운영자 테스트 / tester'):
 
 
 class CollectorTests(unittest.TestCase):
+    def approval(self, state, issue, issues=(), action='labeled'):
+        c.update_approval(state, {'action': action, 'label': {'name': 'approved'},
+                                 'issue': copy.deepcopy(issue), 'sender': {'login': 'owner'}}, issues)
+
+    def pair(self):
+        reg = sample_issue()
+        reg['updated_at'] = '2026-09-08T01:00:00Z'
+        perf = sample_issue(2, '[성과] 문서 작성')
+        perf['updated_at'] = '2026-09-08T02:00:00Z'
+        perf['body'] = f'### 등록 이슈 번호\n1\n### 활동일\n2026-09-08\n### 수행 내용과 본인 역할\n문서 작성\n### 증빙 링크\nhttps://github.com/owner/project\n### 공개 확인\n- [x] {c.PERFORMANCE_CONSENT}'
+        state = {'approvals': {}, 'activities': {}}
+        self.approval(state, reg)
+        self.approval(state, perf, [reg, perf])
+        return reg, perf, state
+
+    def empty_api(self):
+        class EmptyAPI:
+            def request(self, path): return {'private': False, 'default_branch': 'main'}
+            def pages(self, path, params=None): return iter([])
+        return EmptyAPI()
+
+    def test_performance_bound_to_registration_revision(self):
+        for old, new in [('운영자 테스트', '새 동아리'), ('owner/project', 'owner/other'),
+                         ('2026-09-01', '2026-09-02')]:
+            with self.subTest(change=new):
+                reg, perf, state = self.pair()
+                run = lambda: c.collect(self.empty_api(), [reg, perf], state, {'test_accounts': []}, 'owner/clubs')
+                self.assertEqual(len(run()['submissions']), 1)
+                reg['body'] = reg['body'].replace(old, new)
+                reg['updated_at'] = '2026-09-08T03:00:00Z'
+                self.approval(state, reg, action='edited')
+                self.assertEqual(run()['submissions'], [])
+                self.approval(state, reg)
+                result = run()
+                self.assertEqual(result['submissions'], [])
+                self.assertEqual(result['pending'], 1)
+                self.assertTrue(any('재승인' in n for n in result['notices']))
+                perf['updated_at'] = '2026-09-08T04:00:00Z'
+                self.approval(state, perf, action='unlabeled')
+                self.approval(state, perf, [reg, perf])
+                self.assertEqual(len(run()['submissions']), 1)
+
+    def test_legacy_performance_requires_review(self):
+        reg, perf, state = self.pair()
+        del state['approvals']['2']['registration_digest']
+        result = c.collect(self.empty_api(), [reg, perf], state, {'test_accounts': []}, 'owner/clubs')
+        self.assertEqual(result['submissions'], [])
+        self.assertEqual(result['pending'], 1)
+
+    def test_delayed_approval_does_not_bind_to_later_registration(self):
+        reg, perf, state = self.pair()
+        reg['body'] += '\nnew version'
+        reg['updated_at'] = '2026-09-08T03:00:00Z'
+        self.approval(state, reg)
+        self.approval(state, perf, [reg, perf])
+        self.assertIsNone(state['approvals']['2']['registration_digest'])
+
+    def test_old_events_do_not_undo_newer_approval_and_sequence(self):
+        reg, _, state = self.pair()
+        old_event = copy.deepcopy(reg)
+        reg['updated_at'] = '2026-09-08T03:00:00Z'
+        self.approval(state, reg, action='edited')
+        self.assertFalse(c.approved(reg, state['approvals']))
+        reg['updated_at'] = '2026-09-08T04:00:00Z'
+        self.approval(state, reg)
+        self.approval(state, old_event, action='unlabeled')
+        self.assertTrue(c.approved(reg, state['approvals']))
+        reg['updated_at'] = '2026-09-08T05:00:00Z'
+        self.approval(state, reg, action='closed')
+        self.assertFalse(c.approved(reg, state['approvals']))
+        self.approval(state, reg, action='reopened')
+        self.assertFalse(c.approved(reg, state['approvals']))
+
+    def test_changed_registration_discards_prior_collection_scope(self):
+        reg, perf, state = self.pair()
+        run = lambda: c.collect(self.empty_api(), [reg, perf], state, {'test_accounts': []}, 'owner/clubs')
+        run()
+        state['activities']['old'] = {'registration': 1, 'repository': 'owner/project'}
+        self.assertEqual(len(run()['activities']), 1)
+        reg['body'] = reg['body'].replace('owner/project', 'owner/other')
+        reg['updated_at'] = '2026-09-08T03:00:00Z'; self.approval(state, reg)
+        self.assertEqual(run()['activities'], [])
+
+    def test_network_timeout_json_and_partial_pagination(self):
+        api = c.API('')
+        for error in [URLError('offline'), TimeoutError()]:
+            with patch.object(c, 'urlopen', side_effect=error):
+                with self.assertRaisesRegex(RuntimeError, '네트워크'): api.request('/test')
+        with patch.object(c, 'urlopen') as mock:
+            mock.return_value.__enter__.return_value.read.return_value = b'not json'
+            with self.assertRaisesRegex(RuntimeError, '응답 형식'): api.request('/test')
+        reg, _, state = self.pair()
+        state['activity_scopes'] = {'1': c.digest(reg)}
+        state['activities']['old'] = {'registration': 1, 'id': 'old'}
+        def partial(*args):
+            yield {'registration': 1, 'id': 'new'}
+            raise RuntimeError('second page failed')
+        with patch.object(c, 'activities', side_effect=partial):
+            result = c.collect(api, [reg], state, {'test_accounts': []}, 'owner/clubs')
+        self.assertEqual(len(result['activities']), 2)
+        self.assertIn('확인 필요', result['registrations'][0]['status'])
+
     def test_registration_requires_same_account_and_consent(self):
         issue = sample_issue()
         self.assertTrue(c.registration(issue, ['tester'])['test'])
