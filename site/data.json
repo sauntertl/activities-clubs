@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T09:50:21.656310+00:00",
+  "generated_at": "2026-09-08T09:50:44.185900+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-08T09:50:21.655975+00:00"
+      "last_success": "2026-09-08T09:50:44.185558+00:00"
     }
   ],
   "activities": [
@@ -339,6 +339,18 @@
       "title": "fix: add local SW favicon",
       "url": "https://github.com/sauntertl/activities-clubs/commit/c323332ecf2211ca2a72efa115f5aa3c0603378d",
       "date": "2026-09-08T09:50:07Z",
+      "test": true
+    },
+    {
+      "id": "commit:ab10c4a377fd249fdee20848add0623f78253435",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: connect favicon and accessible date validation message",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/ab10c4a377fd249fdee20848add0623f78253435",
+      "date": "2026-09-08T09:50:31Z",
       "test": true
     }
   ],
