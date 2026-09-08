@@ -2,7 +2,7 @@ name: Collect and publish clubs
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 22 * * *'
+    - cron: '17 22 * * 0' # Sunday 22:17 UTC = Monday 07:17 KST
   push:
     branches: [main]
     paths-ignore: ['data/**', 'site/data.json']
