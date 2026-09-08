@@ -1,0 +1,42 @@
+name: 동아리 성과 제출
+description: 주요 성과, 본인 역할, 자동 수집에 없는 활동의 증빙을 제출합니다.
+title: "[성과] 활동명"
+body:
+  - type: markdown
+    attributes:
+      value: "본인의 승인된 등록 번호를 연결해 주세요. 공개 가능한 요약과 링크만 입력합니다. 담당자가 approved 라벨을 붙인 내용만 성과 페이지에 표시합니다."
+  - type: input
+    id: registration
+    attributes:
+      label: 등록 이슈 번호
+      placeholder: "1"
+    validations:
+      required: true
+  - type: input
+    id: activity_date
+    attributes:
+      label: 활동일
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 수행 내용과 본인 역할
+      description: 무엇을 했으며 어떤 역할을 맡았는지 작성합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 증빙 링크
+      description: 저장소, 커밋, PR, 발표자료 등의 https 주소를 한 줄에 하나씩 입력합니다.
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 공개 확인
+      options:
+        - label: 제출 내용과 링크는 공개 가능한 실제 본인 활동이며 공개 게시에 동의합니다.
+          required: true
