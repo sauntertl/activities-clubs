@@ -297,6 +297,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/ce5a8da8ef65b2a033f01f8f2caefac161d3e312",
       "date": "2026-09-08T09:49:26Z",
       "test": true
+    },
+    "1:commit:4f18be46af390d8b0edf999251199f4cad8ef226": {
+      "id": "commit:4f18be46af390d8b0edf999251199f4cad8ef226",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "fix: improve text contrast and remove blocking font import",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/4f18be46af390d8b0edf999251199f4cad8ef226",
+      "date": "2026-09-08T09:49:44Z",
+      "test": true
     }
   },
   "activity_scopes": {
