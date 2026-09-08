@@ -237,6 +237,18 @@
       "url": "https://github.com/sauntertl/activities-clubs/commit/33ee98db9e414be0aced64536fa076f2ac67bd9f",
       "date": "2026-09-08T08:13:24Z",
       "test": true
+    },
+    "1:commit:89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c": {
+      "id": "commit:89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
+      "registration": 1,
+      "login": "sauntertl",
+      "club": "운영자 테스트",
+      "repository": "sauntertl/activities-clubs",
+      "type": "commit",
+      "title": "docs: show weekly club activity refresh schedule",
+      "url": "https://github.com/sauntertl/activities-clubs/commit/89fa0b37e70e4a00c3e39d2b668fd6f6491f0c5c",
+      "date": "2026-09-08T08:13:51Z",
+      "test": true
     }
   }
 }
