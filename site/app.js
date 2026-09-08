@@ -6,7 +6,22 @@ function element(tag, text, cls) { const n=document.createElement(tag); if(text!
 function safeLink(url, text, cls) { const a=element('a',text,cls);try{const u=new URL(url);if(u.protocol==='https:'&&!u.username&&!u.password){a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';}}catch{}return a; }
 function day(value) {if(!value)return '';if(/^\d{4}-\d{2}-\d{2}$/.test(value))return value;return new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul'}).format(new Date(value));}
 function filtered(rows) {const q=$('search').value.trim().toLowerCase(),club=$('club').value,from=$('from').value,to=$('to').value;return rows.filter(r=>($('tests').checked||!r.test)&&(!club||r.club===club)&&(!q||[r.login,r.title,r.summary,r.club,r.repository].join(' ').toLowerCase().includes(q))&&(!from||day(r.date||r.end)>=from)&&(!to||day(r.date||r.start)<=to));}
+function validDates() {
+  const from=$('from'),to=$('to'),invalid=!!(from.value&&to.value&&from.value>to.value);
+  from.max=to.value;to.min=from.value;
+  const error=invalid?'시작일은 종료일보다 늦을 수 없습니다. 날짜를 수정해 주세요.':'';
+  from.setCustomValidity(error);to.setCustomValidity(error);
+  from.setAttribute('aria-invalid',String(invalid));to.setAttribute('aria-invalid',String(invalid));
+  $('date-error').textContent=error;$('date-error').hidden=!invalid;
+  return !invalid;
+}
 function render() {
+  if(!validDates()) {
+    ['m-people','m-repos','m-auto','m-manual','count'].forEach(id=>$(id).textContent='—');
+    $('student-count').textContent='조회 기간 확인 필요';
+    $('panel').replaceChildren(element('div','시작일과 종료일을 확인하면 활동 내역이 표시됩니다.','empty'));
+    return;
+  }
   if(!data)return;
   const regs=filtered(data.registrations),autos=filtered(data.activities),manual=filtered(data.submissions);
   $('m-people').textContent=new Set(regs.map(r=>r.login.toLowerCase())).size;
