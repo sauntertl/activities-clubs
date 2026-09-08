@@ -6,7 +6,7 @@ import re
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
@@ -67,13 +67,35 @@ def approved(issue, approvals):
             and entry.get('digest') == digest(issue))
 
 
-def update_approval(state, event):
+def update_approval(state, event, issues=()):
     issue = event.get('issue')
     if not issue:
         return
     number = str(issue['number'])
+    # Queued workflows can start out of dispatch order. Never replay an older
+    # issue snapshot over an event we have already processed.
+    when = issue.get('updated_at', '')
+    versions = state.setdefault('approval_events', {})
+    if when and when < versions.get(number, ''):
+        return
+    if when:
+        versions[number] = when
     if event.get('action') == 'labeled' and event.get('label', {}).get('name') == 'approved':
-        state['approvals'][number] = {'digest': digest(issue), 'by': event['sender']['login']}
+        entry = {'digest': digest(issue), 'by': event['sender']['login'], 'approved_at': when}
+        if issue['title'].startswith('[성과]'):
+            entry['registration_digest'] = None
+            try:
+                reg_id = int(fields(issue['body']).get('등록 이슈 번호', '').lstrip('#'))
+                reg = next((r for r in issues if r['number'] == reg_id and r['title'].startswith('[등록]')), None)
+                if reg and approved(reg, state['approvals']):
+                    reg_approval = state['approvals'][str(reg_id)]
+                    # A delayed performance approval must not bind to a later
+                    # registration revision that the reviewer never saw.
+                    if not when or max(reg.get('updated_at', ''), reg_approval.get('approved_at', '')) <= when:
+                        entry['registration_digest'] = digest(reg)
+            except (ValueError, KeyError):
+                pass  # Fail closed; malformed or unapproved links need review.
+        state['approvals'][number] = entry
     elif event.get('action') in ('edited', 'closed') or (
         event.get('action') == 'unlabeled' and event.get('label', {}).get('name') == 'approved'
     ):
@@ -140,6 +162,10 @@ class API:
                 return json.loads(raw) if raw else None
         except HTTPError as exc:
             raise RuntimeError(f'GitHub 조회 실패 HTTP {exc.code}: {path}') from None
+        except (URLError, TimeoutError):
+            raise RuntimeError(f'GitHub 네트워크 연결 실패: {path}') from None
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            raise RuntimeError(f'GitHub 응답 형식 오류: {path}') from None
 
     def pages(self, path, params=None):
         for page in range(1, self.max_pages + 1):
@@ -202,7 +228,14 @@ def collect(api, issues, state, config, host):
             except (ValueError, KeyError) as e:
                 notices.append(f"등록 #{issue['number']}: {e}")
     valid_ids = {r['id'] for r in regs}
-    state['activities'] = {k: v for k, v in state['activities'].items() if v['registration'] in valid_ids}
+    scopes = {str(r['id']): state['approvals'][str(r['id'])]['digest'] for r in regs}
+    old_scopes = state.get('activity_scopes', {})
+    # Changed registrations must not inherit old repositories, dates or clubs.
+    # Missing legacy scope metadata is refreshed once rather than guessed.
+    state['activities'] = {k: v for k, v in state['activities'].items()
+                           if v['registration'] in valid_ids
+                           and old_scopes.get(str(v['registration'])) == scopes[str(v['registration'])]}
+    state['activity_scopes'] = scopes
     for reg in regs:
         reg['status'] = '수집 완료'
         try:
@@ -215,8 +248,13 @@ def collect(api, issues, state, config, host):
     for issue in issues:
         if issue['title'].startswith('[성과]') and approved(issue, state['approvals']):
             try:
-                submissions.append(performance(issue, regs))
+                submission = performance(issue, regs)
+                expected = scopes[str(submission['registration'])]
+                if state['approvals'][str(issue['number'])].get('registration_digest') != expected:
+                    raise ValueError('연결 등록 정보 변경 또는 이전 승인 형식: 성과 라벨을 제거한 뒤 재승인해 주세요')
+                submissions.append(submission)
             except (ValueError, KeyError) as e:
+                pending += 1
                 notices.append(f"성과 #{issue['number']}: {e}")
     return dict(generated_at=datetime.now(timezone.utc).isoformat(), repository=host, config=config,
                 registrations=regs, activities=list(state['activities'].values()), submissions=submissions,
@@ -228,15 +266,15 @@ def main():
     host = repository_name(os.environ['GITHUB_REPOSITORY'])
     api = API(os.environ.get('GITHUB_TOKEN', ''), config['max_pages'])
     state = json.loads((ROOT / 'data/state.json').read_text(encoding='utf-8'))
-    event_path = os.environ.get('GITHUB_EVENT_PATH')
-    if event_path and os.environ.get('GITHUB_EVENT_NAME') == 'issues':
-        update_approval(state, json.loads(Path(event_path).read_text(encoding='utf-8')))
     # Idempotent label setup; only the current application repository is modified.
     labels = list(api.pages('/repos/' + host + '/labels'))
     if 'approved' not in [x['name'] for x in labels]:
         api.request('/repos/' + host + '/labels', method='POST', data={
             'name': 'approved', 'color': '16866B', 'description': '담당자 확인 완료. 내용 수정 후에는 제거하고 다시 승인합니다.'})
     issues = sorted(api.pages('/repos/' + host + '/issues', {'state': 'all'}), key=lambda x: x['number'])
+    event_path = os.environ.get('GITHUB_EVENT_PATH')
+    if event_path and os.environ.get('GITHUB_EVENT_NAME') == 'issues':
+        update_approval(state, json.loads(Path(event_path).read_text(encoding='utf-8')), issues)
     output = collect(api, issues, state, config, host)
     for path, value in [('data/state.json', state), ('site/data.json', output)]:
         (ROOT / path).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
