@@ -1,0 +1,52 @@
+name: 동아리 활동 등록
+description: GitHub 계정과 공개 프로젝트 저장소를 등록합니다.
+title: "[등록] 동아리명 / GitHub ID"
+body:
+  - type: markdown
+    attributes:
+      value: "본인 GitHub 계정으로 제출해 주세요. 담당자가 approved 라벨을 붙이면 수집을 시작합니다. 학번·연락처·비밀번호는 입력하지 마세요."
+  - type: input
+    id: club
+    attributes:
+      label: 동아리명
+      placeholder: 운영자 테스트
+    validations:
+      required: true
+  - type: input
+    id: username
+    attributes:
+      label: GitHub ID
+      description: 현재 로그인한 본인의 GitHub ID
+      placeholder: sauntertl
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: 공개 저장소
+      description: 한 등록당 저장소 하나. 추가 프로젝트는 별도로 등록합니다.
+      placeholder: https://github.com/소유자/저장소
+    validations:
+      required: true
+  - type: input
+    id: start
+    attributes:
+      label: 시작일
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: end
+    attributes:
+      label: 종료일
+      description: 시작일부터 최대 366일 이내
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 공개 및 수집 확인
+      options:
+        - label: GitHub ID, 동아리명, 지정 저장소의 공개 활동을 수집하고 이 페이지에 공개하는 것에 동의합니다.
+          required: true
