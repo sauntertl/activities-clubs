@@ -31,6 +31,7 @@
 
 ```text
 python -m unittest discover -s tests -v
+node --test tests/test_frontend.js
 python -m http.server 8765 --directory site
 ```
 
