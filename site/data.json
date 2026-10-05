@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T00:45:12.880692+00:00",
+  "generated_at": "2026-10-05T00:54:51.994368+00:00",
   "repository": "sauntertl/activities-clubs",
   "config": {
     "title": "SW 동아리 활동",
@@ -25,7 +25,7 @@
       "test": true,
       "status": "수집 완료",
       "branch": "main",
-      "last_success": "2026-09-28T00:45:12.880421+00:00"
+      "last_success": "2026-10-05T00:54:51.994158+00:00"
     }
   ],
   "activities": [
